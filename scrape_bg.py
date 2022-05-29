@@ -67,11 +67,11 @@ if __name__ == "__main__":
             for x in bglist:
                 filename = x.split('/')[-1]+'.jpg'
                 img_bytes = bytes_bg(x, verbose=bool(verbose))
-                saveBytesTOfile(img_bytes, f"{folderpath}/{filename}")
+                saveBytesTofile(img_bytes, f"{folderpath}/{filename}")
         except KeyboardInterrupt:
             print("Signal recieved: Exiting")
             break
         except TypeError as e:
             print("Could not Fetch Query from the Server")
             break
-        time.sleep(halt*60)
+        time.sleep(int(halt)*60)
