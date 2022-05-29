@@ -59,7 +59,7 @@ def saveBytesTofile(bytes_, path_filename, verbose=False):
         return
 
 if __name__ == "__main__":
-    query, folderpath, verbose= input("query !! folderpath  !! verbose: ").split('!!')
+    query, folderpath, verbose, halt= input("query !! folderpath  !! verbose !! halt in minutes: ").split('!!')
     print(f"\r Query:{query},Folder: {folderpath}, Verbose: {bool(verbose)}", end="")
     while True:
         try:
@@ -74,4 +74,4 @@ if __name__ == "__main__":
         except TypeError as e:
             print("Could not Fetch Query from the Server")
             break
-        time.sleep(2*60*60)
+        time.sleep(halt*60)
